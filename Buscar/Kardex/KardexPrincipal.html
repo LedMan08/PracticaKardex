@@ -1,0 +1,364 @@
+<template name="KardexPrincipal">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="estilo2.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <center><img src="lufy.jpg" style="width:70%; " class="w3-round"><br></center>
+     <p class="w3-text-grey">R.U. : <BR> 
+     NOMBRE DEL ESTUDIANTE <br>
+    
+    <button type="button" class="btn btn-default w3-large " >
+      EDITAR PERFIL 
+    </button><span class="btn btn-primary glyphicon glyphicon-pencil"></span>
+    </p>
+
+  </div>
+  <div class="w3-bar-block"> 
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>PERFIL DEL ESTUDIANTE</a> 
+    <a href="#kardex" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>KARDEX DEL ESTUDIANTE</a> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-photo fa-fw w3-margin-right"></i>DOCUMENTOS EXTRA</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACTAR ESTUDIANTE</a>
+  </div>
+</nav>
+{{>principal}}
+</body>
+</template>
+
+<!-- aqui va las fotos del kardex academico-->
+<template name="principal">
+ 
+<!--BUSCADOR-->
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+  <div class="w3-padding"><p class="w3-container">{{>buscador}}</p></div> 
+  {{>kardex}}
+ 
+  {{>extra}}
+ 
+  {{>contactos}}
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+</div>
+
+</template>
+
+<template name="kardex">
+
+
+
+  
+  <header id="kardex">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>KARDEX DEL ESTUDIANTE</b></h1>
+    
+    </div>
+  </header>
+  
+  <!-- FOTOS DEL KARDEX-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/mountains.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>CERTIFICADO DE NACIMIENTO</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/lights.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>CARNET DE INDENTIDAD</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/nature.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>DIPLOMA BACHILLER</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p1.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>LIBRETA ESCOLAR DE ULTIMO CURSO VENCIDO</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p2.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>PRE-MEDICO</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/p3.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>KARDEX ACADEMICO</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-left w3-container">
+  <h3>DOCUMENTOS PRESENTADOS</h3>
+    
+     <p>
+      <input type="checkbox" id="test1" />
+      <label for="test1">CERTIFICADO DE NACIMIENTO</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test2" />
+      <label for="test2">CARNET DE IDENTIDAD</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test3" />
+      <label for="test3">DIPLOMA DE BACHILLER</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test4" />
+      <label for="test4">LIBRETA ESCOLAR</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">PRE-MEDICO</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test6" />
+      <label for="test6">KARDEX ACADEMICO</label>
+    </p>
+  </div>
+  <!-- Pagination 
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  -->
+  <!-- Images of Me -->
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="/w3images/avatar_g.jpg" alt="" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="/w3images/me2.jpg" alt="" style="width:100%">
+    </div>
+  </div>
+  
+</template>
+
+<template name="extra">
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>DOCUMENTOS EXTRA</b></h4>
+     <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p1.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>MATRICULA</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p2.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>CERTIFICADO DE NOTAS</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="/w3images/p3.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>SOLICITUDES</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+  </div>    
+    
+  </div>
+  
+</template>
+
+
+<template name="contactos">
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact" class="w3-text-white"><b>CONTACTAR ESTUDIANTE</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>email@email.com</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Potosí, Bo</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>66223638</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label class="w3-text-white w3-large">Nombre</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label class="w3-text-white w3-large">Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label class="w3-text-white w3-large">Mensaje</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Enviar Mensaje</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Faculatad de Medicina</div>
+
+<!-- End page content -->
+
+
+</template>
+
+
+
+
+<!-- BUSCADOR DE FOTOS-->
+<template name="buscador">
+    <h4>Buscar Ducumento</h4>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar documento..." title="" ><button class="glyphicon glyphicon-search w3-xxxlarge" id="mylupa"></button>
+    
+
+    <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<template name="luis">
+  <h2>Buscar Foto</h2>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar documento..." title="Type in a name" >
+    
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="/w3images/p2.jpg" alt="Escaneado" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>CERTIFICADO DE NOTAS</b></p>
+        <p><img src=""></p>
+      </div>
+    </div>
+    
+    <table id="myTable">
+      <tr class="header">
+        <th style="width:60%;">Name</th>
+        <th style="width:40%;">Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Berglunds snabbkop</td>
+        <td>Sweden</td>
+      </tr>
+    </table>
+
+
+
+    <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+</template>
+
+-->
